@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', 	   'http://localhost:7882/payroll/');
+define('BASE_URL', 	   'remotemysql.com/payroll/');
 define('REG_URL', 	   'http://localhost:7882/payroll/registration/');
 define('COMPANY_NAME', 'Online Payroll Management System');
 define('QR_URL', 	   'remotemysql.com/payroll/QRCodeAttendance/');
