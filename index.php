@@ -40,7 +40,7 @@ $page_name = basename($_SERVER["SCRIPT_FILENAME"], '.php');
 <body class="hold-transition login-page" style="background-color: #00162A; color: white;">
     <div class="login-box" style="margin-top: 80px;">
         <div class="login-logo" style="color:white; ">
-            <a href="<?php echo BASE_URL; ?>QRCodeAttendance/">
+            <a href="<?php echo BASE_URL; ?>QRCodeAttendance/index.php">
                         <img alt="Qries" src="<?php echo BASE_URL; ?>/dist/img/qrcode.png"
          width=120" height="100">
                     </a>
