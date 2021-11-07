@@ -3,7 +3,7 @@
 define('BASE_URL', 	   'http://localhost:7882/payroll/');
 define('REG_URL', 	   'http://localhost:7882/payroll/registration/');
 define('COMPANY_NAME', 'Online Payroll Management System');
-define('QR_URL', 	   'http://localhost:7882/payroll/QRCodeAttendance/');
+define('QR_URL', 	   'remotemysql.com/payroll/QRCodeAttendance/');
 
 // MySQL Database Details
 // define('DB_SERVER', 	'localhost');
