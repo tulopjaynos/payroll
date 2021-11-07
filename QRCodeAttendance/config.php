@@ -1,6 +1,6 @@
 <?php
 
-define('QR_URL',   'http://localhost:7882/payroll/QRCodeAttendance/');
+define('QR_URL',   'remotemysql.com/payroll/QRCodeAttendance/');
 
 // define('DB_SERVER', 	'localhost');
 // define('DB_USER', 		'root');
