@@ -2,10 +2,16 @@
 
 define('BASE_URL',   'http://localhost:7882/payroll/registration/');
 
-define('DB_SERVER', 	'localhost');
-define('DB_USER', 		'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 		'opms');
+// define('DB_SERVER', 	'localhost');
+// define('DB_USER', 		'root');
+// define('DB_PASSWORD', '');
+// define('DB_NAME', 		'opms');
+// define('DB_PREFIX', 	'wy_');
+
+define('DB_SERVER', 	'remotemysql.com');
+define('DB_USER', 		'cqfh9GWair');
+define('DB_PASSWORD', '8dFYmmTZ42');
+define('DB_NAME', 		'cqfh9GWair');
 define('DB_PREFIX', 	'wy_');
 
 error_reporting(1);
