@@ -20,12 +20,12 @@
             'dev_requirement' => false,
         ),
         'mpdf/mpdf' => array(
-            'pretty_version' => 'v8.0.13',
-            'version' => '8.0.13.0',
+            'pretty_version' => 'v8.0.14',
+            'version' => '8.0.14.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpdf/mpdf',
             'aliases' => array(),
-            'reference' => '42f145615cfe830fd432474da1d2e1f927efe402',
+            'reference' => 'ab362c8b11667813487be5d3da64b31c89d9d826',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(

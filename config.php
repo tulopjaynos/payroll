@@ -6,17 +6,17 @@ define('COMPANY_NAME', 'Online Payroll Management System');
 define('QR_URL', 	   'http://localhost:7882/payroll/QRCodeAttendance/');
 
 // MySQL Database Details
-// define('DB_SERVER', 	'localhost');
-// define('DB_USER', 		'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 		'opms');
-// define('DB_PREFIX', 	'wy_');
-
-define('DB_SERVER', 	'remotemysql.com');
-define('DB_USER', 		'cqfh9GWair');
-define('DB_PASSWORD', '8dFYmmTZ42');
-define('DB_NAME', 		'cqfh9GWair');
+define('DB_SERVER', 	'localhost');
+define('DB_USER', 		'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 		'opms');
 define('DB_PREFIX', 	'wy_');
+
+// define('DB_SERVER', 	'remotemysql.com');
+// define('DB_USER', 		'cqfh9GWair');
+// define('DB_PASSWORD', '8dFYmmTZ42');
+// define('DB_NAME', 		'cqfh9GWair');
+// define('DB_PREFIX', 	'wy_');
 
 // Email Constant
 define("PHPMAILER_SMTPSECURE", 	 "ssl");
@@ -42,8 +42,8 @@ session_start();
 
 // *** FOR PDF, please get the mpdf60 folder and paste it under project directory and uncomment the below 2 lines of code ***
 
-//**include(dirname(__FILE__) . '/mpdf60/mpdf.php');
-//**$mpdf = new mPDF();
+include(dirname(__FILE__) . '/mpdf60/vendor/autoload.php');
+$mpdf =new \Mpdf\Mpdf();
 
 
 include(dirname(__FILE__) . '/functions.php');

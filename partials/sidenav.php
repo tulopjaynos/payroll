@@ -91,6 +91,11 @@ if ( $attendanceSQL ) {
 						<i class="fa fa-calendar-check-os"></i> <span>List Holidays</span>
 					</a>
 				</li>
+				<li class="<?php echo $page_name == "schedules" ? 'active' : ''; ?>">
+					<a href="<?php echo BASE_URL; ?>schedules/">
+						<i class="fa fa-calendar-check-os"></i> <span>Schedules</span>
+					</a>
+				</li>
 			<?php } else { ?>
 				<li class="<?php echo $page_name == "salaries" ? 'active' : ''; ?>">
 					<a href="<?php echo BASE_URL; ?>salaries/">

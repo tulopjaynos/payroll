@@ -69,9 +69,12 @@ if ( isset($_POST['submit']) ) {
 	if ( empty($_POST['joining_date']) ) {
 		$errors['joining_date'] = '<span class="text-red">Please enter your joining date!</span>';
 	}
-	if ( empty($_POST['bloodgrp']) ) {
-		$errors['bloodgrp'] = '<span class="text-red">Please enter your blood group!</span>';
-	}
+	// if ( empty($_POST['emp_position']) ) {
+	// 	$errors['emp_position'] = '<span class="text-red">Please enter position title!</span>';
+	// }
+	// if ( empty($_POST['schedules']) ) {
+	// 	$errors['schedules'] = '<span class="text-red">Please enter schedules!</span>';
+	// }
 	if ( empty($_POST['emp_password']) ) {
 		$errors['emp_password'] = '<span class="text-red">Please set employee password!</span>';
 	} 
@@ -96,7 +99,7 @@ if ( isset($_POST['submit']) ) {
 	 	if ( move_uploaded_file($file_tmp, $target_dir . $photocopy) ) {
 			
 	 		extract($_POST);
-	 		$insertSQL = mysqli_query($db, "INSERT INTO `" . DB_PREFIX . "employees`(`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `merital_status`, `nationality`, `address`, `city`, `state`, `country`, `email`, `mobile`, `telephone`, `identity_doc`, `identity_no`, `emp_type`, `joining_date`, `blood_group`, `emp_password` , `photo`, `middle_name`, `qr_code`, `created`) VALUES ('$curEmpID', '$first_name', '$last_name', '$dob', '$gender', '$merital_status', '$nationality', '$address', '$city', '$state', '$country', '$email', '$mobile', '$telephone', '$identification', '$id_no', '$employment_type', '$joining_date', '$bloodgrp', '" . sha1($emp_password) . "' , '$photocopy', '$middle_name', '$curEmpID".sha1($emp_password)."',  NOW())");
+	 		$insertSQL = mysqli_query($db, "INSERT INTO `" . DB_PREFIX . "employees`(`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `merital_status`, `nationality`, `address`, `city`, `state`, `country`, `email`, `mobile`, `telephone`, `identity_doc`, `identity_no`, `emp_type`, `joining_date`, `emp_password` , `photo`, `middle_name`, `qr_code`, `created`) VALUES ('$curEmpID', '$first_name', '$last_name', '$dob', '$gender', '$merital_status', '$nationality', '$address', '$city', '$state', '$country', '$email', '$mobile', '$telephone', '$identification', '$id_no', '$employment_type', '$joining_date', '" . sha1($emp_password) . "' , '$photocopy', '$middle_name', '$curEmpID".sha1($emp_password)."',  NOW())");
 	 		$_SESSION['success'] = '<p class="text-center"><span class="text-success">Employee registration successfully!</span></p>';
 	 		header('location:report.php?');
 	 	} else {
@@ -300,13 +303,44 @@ if ( isset($_POST['submit']) ) {
 							<?php echo $errors['joining_date']; ?>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="bloodgrp" class="col-sm-2 control-label">Position</label>
+					<!--iv class="form-group">
+						<label for="emp_position" class="col-sm-2 control-label">Position</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="bloodgrp" name="bloodgrp" placeholder="Position" value="<?php echo $_POST['bloodgrp']; ?>" required />
-							<?php echo $errors['bloodgrp']; ?>
+						
+								
+							<select name="emp_position" id="emp_position" class="form-control" required>
+                				<option hidden> - Select -</option>
+								<option value="">Please make a choice</option>
+								<option <?php echo $_POST['emp_position']=='Quality Analyst' ? 'selected' : ''; ?> value="Quality Analyst">Quality Analyst</option>
+								<option <?php echo $_POST['emp_position']=='Customer Service Representative' ? 'selected' : ''; ?> value="Customer Service Representative">Customer Service Representative</option>
+								<option <?php echo $_POST['emp_position']=='Team Leader' ? 'selected' : ''; ?> value="Team Leader">Team Leader</option>
+								<option <?php echo $_POST['emp_position']=='Manager' ? 'selected' : ''; ?> value="Manager">Manager</option>
+								<option <?php echo $_POST['emp_position']=='Human Resource' ? 'selected' : ''; ?> value="Human Resource">Human Resource</option>
+								<option <?php echo $_POST['emp_position']=='IT Help Desk' ? 'selected' : ''; ?> value="IT Help Desk">IT Help Desk</option>
+								<option <?php echo $_POST['emp_position']=='Compliance Analyst' ? 'selected' : ''; ?> value="Compliance Analyst">Compliance Analyst</option>
+								<option <?php echo $_POST['emp_position']=='Talent Acquisition' ? 'selected' : ''; ?> value="Talent Acquisition">Talent Acquisition</option>
+								<option <?php echo $_POST['emp_position']=='Customer Experience Specialist' ? 'selected' : ''; ?> value="Customer Experience Specialist">Customer Experience Specialist</option>
+              				</select>
 						</div>
+								<?php echo $errors['emp_position']; ?>
 					</div>
+										<!--div class="form-group">
+						<label for="schedules" class="col-sm-2 control-label">Schedules</label>
+						<div class="col-sm-4">
+						
+								
+							<select name="schedules" id="schedules" class="form-control" required>
+                				<option hidden> - Select -</option>
+                					<option value="">Please make a choice</option>
+								<option <?php echo $_POST['schedules']=='Part-time employee' ? 'selected' : ''; ?> value="Part-time employee">Part-time employee</option>
+								<option <?php echo $_POST['schedules']=='Intern' ? 'selected' : ''; ?> value="Intern">Intern</option>
+								<option <?php echo $_POST['schedules']=='Holiday worker' ? 'selected' : ''; ?> value="Holiday worker">Holiday worker</option>
+								<option <?php echo $_POST['schedules']=='Full-Time' ? 'selected' : ''; ?> value="Full-Time">Full-Time</option>
+								<option <?php echo $_POST['schedules']=='Contract Worker' ? 'selected' : ''; ?> value="Contract Worker">Contract Worker</option>
+              				</select>
+						</div>
+							<?php echo $errors['schedules']; ?>
+					</div-->
 					<div class="form-group">
 						<label for="photo" class="col-sm-2 control-label">Photograph</label>
 						<div class="col-sm-10">

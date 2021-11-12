@@ -846,6 +846,7 @@ function EditEmployeeDetailsByID() {
 }
 
 function GeneratePaySlip() {
+	
 	global $mpdf, $db;
 	$result = array();
 

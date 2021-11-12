@@ -16,7 +16,9 @@
         $studentID =$_POST['studentID'];
 		$date = date('Y-m-d');
 		$time = date('H:i:s A');
-		
+		$fname = $row['first_name'];
+        $lname = $row['last_name'];
+        $full = $lname . ', ' . $fname;
 
 		$sql = "SELECT * FROM wy_employees WHERE qr_code= '$studentID'";
 		$query = $conn->query($sql);
@@ -26,14 +28,21 @@
 		}else{
 				$row = $query->fetch_assoc();
 				$id = $row['emp_code'];
+				$fname = $row['first_name'];
+        		$lname = $row['last_name'];
+        		$full = $lname . ', ' . $fname;
+
+
 				$sql ="SELECT * FROM attendance WHERE STUDENTID='$id' AND LOGDATE='$date' AND STATUS='0'";
 				$query=$conn->query($sql);
 				if($query->num_rows>0){
-				$sql = "UPDATE attendance SET TIMEOUT='$time', STATUS='1' WHERE STUDENTID='$id' AND LOGDATE='$date'";
+					
+
+				$sql = "UPDATE attendance SET TIMEOUT='$time', STATUS='1', attendance_hour='$int' WHERE STUDENTID='$id' AND LOGDATE='$date'";
 				$query=$conn->query($sql);
 				$_SESSION['success'] = 'Successfuly Time Out: '.$row['first_name'].' '.$row['last_name'];
 			}else{
-					$sql = "INSERT INTO attendance(STUDENTID,TIMEIN,LOGDATE,STATUS) VALUES('$id','$time','$date','0')";
+					$sql = "INSERT INTO attendance(STUDENTID,TIMEIN,LOGDATE,STATUS,employee_name) VALUES('$id','$time','$date','0','$full')";
 					if($conn->query($sql) ===TRUE){
 					 $_SESSION['success'] = 'Successfuly Time In: '.$row['first_name'].' '.$row['last_name'];
 			 }else{
