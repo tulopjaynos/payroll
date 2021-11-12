@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL',   'http://localhost:7882/payroll/registration/');
+define('BASE_URL',   'https://online-payroll.herokuapp.com/payroll/registration/');
 
 define('DB_SERVER', 	'localhost');
 define('DB_USER', 		'root');
