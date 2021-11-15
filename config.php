@@ -6,18 +6,18 @@ define('COMPANY_NAME', 'Online Payroll Management System');
 define('QR_URL', 	   'http://localhost:7882/payroll/QRCodeAttendance/');
 
 // MySQL Database Details
-// define('DB_SERVER', 	'localhost');
-// define('DB_USER', 		'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 		'opms');
-// define('DB_PREFIX', 	'wy_');
+define('DB_SERVER', 	'localhost');
+define('DB_USER', 		'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 		'opms');
+define('DB_PREFIX', 	'wy_');
 
 //Development REmote SQL connection
-define('DB_SERVER', 	'remotemysql.com');
-define('DB_USER', 		'h2RQb6NCyj');
-define('DB_PASSWORD', 'PpVEksK82S');
-define('DB_NAME', 		'h2RQb6NCyj');
-define('DB_PREFIX', 	'wy_');
+// define('DB_SERVER', 	'remotemysql.com');
+// define('DB_USER', 		'h2RQb6NCyj');
+// define('DB_PASSWORD', 'PpVEksK82S');
+// define('DB_NAME', 		'h2RQb6NCyj');
+// define('DB_PREFIX', 	'wy_');
 
 // Email Constant
 define("PHPMAILER_SMTPSECURE", 	 "ssl");

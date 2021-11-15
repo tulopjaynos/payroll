@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navyBlue"
+    android:padding="40dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/qrScannerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qr_scanner"
+        android:textColor="@color/dodgerblue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/opmsTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/opmsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opms"
+        android:textAlignment="center"
+        android:textColor="@color/gray_700"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qrScannerTextView" />
+
+    <Button
+        android:id="@+id/qrScannerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:text="@string/scan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/empCodeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emp_code_label"
+        android:textColor="@color/dodgerblue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/empNameLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/empCodeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emp_code_value"
+        android:textColor="@color/gray_700"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/empCodeLabel"
+        app:layout_constraintBottom_toBottomOf="@id/empCodeLabel"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline" />
+
+    <TextView
+        android:id="@+id/empNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emp_name_label"
+        android:textColor="@color/dodgerblue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/empTimeInLabel"
+        app:layout_constraintTop_toBottomOf="@+id/empCodeLabel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/empNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emp_name_value"
+        android:textColor="@color/gray_700"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@+id/empNameLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/empNameLabel"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline" />
+
+    <TextView
+        android:id="@+id/empTimeInLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_in_label"
+        android:textColor="@color/dodgerblue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/empTimeOutLabel"
+        app:layout_constraintTop_toBottomOf="@+id/empNameLabel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/empTimeInValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_in_value"
+        android:textColor="@color/gray_700"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@+id/empTimeInLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/empTimeInLabel"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline" />
+
+    <TextView
+        android:id="@+id/empTimeOutLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_out_label"
+        android:textColor="@color/dodgerblue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/empTimeInLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/empTimeOutValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_700"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@+id/empTimeOutLabel"
+        app:layout_constraintBottom_toBottomOf="@id/empTimeOutLabel"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

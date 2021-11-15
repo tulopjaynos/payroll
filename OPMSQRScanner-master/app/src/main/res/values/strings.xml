@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OPMS QR Scanner</string>
+    <string name="scan">Scan</string>
+    <string name="qr_scanner">QR Scanner</string>
+    <string name="opms">Online Payroll Management System</string>
+    <string name="emp_code_label">Employee ID:</string>
+    <string name="emp_code_value">12345</string>
+    <string name="emp_name_label">Employee Name:</string>
+    <string name="emp_name_value">Name</string>
+    <string name="time_in_label">Time in:</string>
+    <string name="time_in_value">00:00:00</string>
+    <string name="time_out_label">Time out:</string>
+</resources>
