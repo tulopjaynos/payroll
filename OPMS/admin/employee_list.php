@@ -228,7 +228,8 @@ include("controller.php");
                 <?php
 
                 $sql = "SELECT * FROM wy_employees 
-                LEFT JOIN emp_position ON emp_position.pos_id = wy_employees.blood_group";
+                LEFT JOIN emp_position ON emp_position.pos_id = wy_employees.blood_group
+                LEFT JOIN emp_sched ON emp_sched.sched_id = wy_employees.sched_id";
                 $result = mysqli_query($db, $sql);
                 while($row = mysqli_fetch_array($result))
                 {
@@ -241,7 +242,7 @@ include("controller.php");
 
                   <td><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></td>
                   <td><?php echo $row['position_title']; ?></td>
-                  <td><?php echo $row['emp_timein']; ?> - <?php echo $row['emp_timeout']; ?></td>
+                  <td><?php echo $row['sched_in']; ?> - <?php echo $row['sched_out']; ?></td>
                   <td><?php echo $row['joining_date']; ?></td>
                   <td>
                     <button class="btn btn-default btn-flat emp_edit" id="<?php echo $row['emp_code']; ?>" style="background-color: yellow">Edit<i class=""></i></button>

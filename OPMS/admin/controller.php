@@ -453,15 +453,15 @@ if(isset($_POST["emp_edit_id"]))
                 <div class="col-sm-7">
                   <select name="update_position" class="form-control" value="'.$passwrd.'">
                      <option hidden>- Select -</option>
-                     <option value="Quality Analyst">Quality Analyst</option>
-                    <option value="CSR">CSR</option>
-                    <option value="Team Leader">Team Leader</option>
-                    <option value="Manager">Manager</option>
-                    <option value="HR">HR</option>
-                    <option value="IT">IT</option>
-                    <option value="Compliance Analyst">Compliance Analyst</option>
-                    <option value="Talent Acquisition">Talent Acquisition</option>
-                    <option value="Subject Matter Expert">Subject Matter Expert</option>
+                     <option value="9">Quality Analyst</option>
+                    <option value="10">CSR</option>
+                    <option value="11">Team Leader</option>
+                    <option value="12">Manager</option>
+                    <option value="13">HR</option>
+                    <option value="14">IT</option>
+                    <option value="15">Compliance Analyst</option>
+                    <option value="16">Talent Acquisition</option>
+                    <option value="17">Subject Matter Expert</option>
                   </select>
                 </div>
               </div>
@@ -818,9 +818,8 @@ if(isset($_POST["change"]))
  {
    $id = $_POST['change_sched_id'];
    $new = $_POST['new_sched'];
-   $schedin = $POST['sched_in'];
-   $schedout = $POST['sched_out'];
-   $sql = "UPDATE wy_employees SET sched_id = '$new', emp_timein = '$schedin', emp_timeout = '$schedout' WHERE emp_code = '$id'";
+  
+   $sql = "UPDATE wy_employees SET sched_id = '$new' WHERE emp_code = '$id'";
    $result = mysqli_query($db, $sql);
 
    echo '<script>

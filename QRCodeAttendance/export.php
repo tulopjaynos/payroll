@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $username="root";
 $password="";
-$dbname="qrcodedb";
+$dbname="opms";
 
 $conn = new mysqli($server,$username,$password,$dbname);
 
@@ -12,7 +12,7 @@ if($conn->connect_error){
 }
 $filename = 'AttenadanceRecord-'.date('Y-m-d').'.csv';
 
-$query = "SELECT * FROM table_attendance";
+$query = "SELECT * FROM attendance";
 $result = mysqli_query($conn,$query);
 
 $array = array();

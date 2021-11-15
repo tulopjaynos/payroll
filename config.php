@@ -42,8 +42,8 @@ session_start();
 
 // *** FOR PDF, please get the mpdf60 folder and paste it under project directory and uncomment the below 2 lines of code ***
 
-include(dirname(__FILE__) . '/mpdf60/vendor/autoload.php');
-$mpdf =new \Mpdf\Mpdf();
+include(dirname(__FILE__) . '/mpdf60/mpdf.php');
+$mpdf = new mPDF();
 
 
 include(dirname(__FILE__) . '/functions.php');

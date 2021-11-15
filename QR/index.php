@@ -81,9 +81,7 @@ if(isset($_POST['submit']) ) {
 					<a class="btn btn-primary submitBtn" style="width:210px; margin:5px 0;" href="download.php?file=<?php echo $filename; ?>.png ">Download QR Code</a>
 				</center>
 			</div>
-			<!--div class = "dllink" style="text-align:center;margin:-100px 0px 50px 0px;">
-				<h4>www.itsourcecode.com</h4>
-			</div-->
+			
 		</div>
 	</body>
 	<footer></footer>

@@ -73,15 +73,17 @@ tr:nth-child(even) {
       $id = $_SESSION['card'];
 
 
-      $sql0 = "SELECT *, SUM(attendance_hour) as Total_dtr FROM attendance WHERE LOGDATE BETWEEN '$s' AND '$e' AND STUDENTID = '$id'";
+      $sql0 = "SELECT *, SUM(attendance_hour) as Total_dtr FROM attendance, wy_employees WHERE LOGDATE BETWEEN '$s' AND '$e' AND STUDENTID = '$id' AND emp_code ='$id'";
+      
       $result0 = mysqli_query($db, $sql0);
       while($row0 = mysqli_fetch_array($result0))
       {
         $name = $row0['employee_name'];
+        
       ?>
       <tr>
         <td><?php echo $s; ?> - <?php echo $e; ?></td>
-        <td><?php echo $row['employee_name'] ?></td>
+        <td><?php echo $row0['last_name']; ?>, <?php echo $row0['first_name']; ?></td>
         <td><?php echo $row0['Total_dtr']; ?></td>
       </tr>
       <?php
@@ -117,6 +119,7 @@ tr:nth-child(even) {
       $GrossPay = $rowGross['position_rate'] * $rowGross['Hours'];
       
       $sqlAttendance = "SELECT * FROM attendance WHERE LOGDATE BETWEEN '$s' AND '$e' AND STUDENTID = '$id'";
+
       $resultAttendance = mysqli_query($db, $sqlAttendance);
 
       $total_late_deduction = 0;
@@ -140,12 +143,13 @@ tr:nth-child(even) {
       $NetPay = $GrossPay - $TotalDeduction - $total_late_deduction + $total_overtime_pay;
       ?>
 
-        <p align="center" style="background-color: #87CEFA">Employee Name: <b><?php echo $rowGross['last_name']?>,<?php echo $rowGross['first_name']?></b></p>
-        <p align="center" style="background-color: #87CEFA">Position: <b><?php echo $rowGross['position_title']?>  </b>Type: <b><?php echo $rowGross['emp_card']?></b></p>
+
+        <p align="center" style="background-color: #87CEFA">Employee Name: <b><?php echo $rowGross['last_name']?>, <?php echo $rowGross['first_name']?></b></p>
+        <p align="center" style="background-color: #87CEFA">Position: <b><?php echo $rowGross['position_title']?>  </b>Type: <b><?php echo $rowGross['emp_type']?></b></p>
         <p align="center" style="background-color: #87CEFA">Pay date: <b><?php echo $s; ?>-<?php echo $e; ?></b></p>
         <p align="center" style="background-color: #87CEFA">Rendered Time to be pay To: <b><?php echo $e; ?></b></p>
         <hr>
-        <p align="center" style="background-color: #87CEFA"><b>Gross Montly Income: <?php echo number_format($GrossPay); ?> <?php echo $Position; ?> </b></p>
+        <p align="center" style="background-color: #87CEFA"><b>Gross Montly Income: P<?php echo number_format($GrossPay); ?> <?php echo $Position; ?>.00</b></p>
         <hr>  
 
         <p align="center" style="background-color: #FA8072"><b>Total Deduction<br>
@@ -160,7 +164,7 @@ tr:nth-child(even) {
               echo "Accumulated Late (" . ($total_late_deduction / $late_rate_per_min) . "): ₱" . number_format($total_late_deduction);
             }
           ?>
-          <br>Total Deduction: <?php echo number_format($TotalDeduction); ?></b></p>
+          <br>Total Deduction: P<?php echo number_format($TotalDeduction); ?>.00</b></p>
         <hr>
 
         <?php

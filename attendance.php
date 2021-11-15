@@ -74,7 +74,7 @@ if ( !isset($_SESSION['Admin_ID']) || $_SESSION['Login_Type'] != 'admin' ) {
 		</div>
 
 		<!--footer class="main-footer">
-			<strong> &copy; <?php echo date("Y");?> Payroll Management System | </strong> Developed By Surajit Pramanik
+			<strong> &copy; <?php echo date("Y");?> Online Payroll Management System | </strong> 
 		</footer-->
 	</div>
 
